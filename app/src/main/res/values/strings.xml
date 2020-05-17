@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">firestore</string>
+    <string name="new_user_sign_up">New User? Sign up</string>
+    <string name="login">Login</string>
+    <string name="password_hint">Password</string>
+    <string name="email_address_hint">Email address</string>
+    <string name="first_name_hint">First name</string>
+    <string name="last_name_hint">Last Name</string>
+    <string name="confirm_password_hint">Confirm Password</string>
+    <string name="sign_up_text">Sign up</string>
+    <string name="back_to_login_text">Back to Login</string>
+</resources>

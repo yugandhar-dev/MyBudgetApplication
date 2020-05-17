@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "7471614068",
+    "firebase_url": "https://firestore-new-acebc.firebaseio.com",
+    "project_id": "firestore-new-acebc",
+    "storage_bucket": "firestore-new-acebc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:7471614068:android:1658dfa2c00dfa93592921",
+        "android_client_info": {
+          "package_name": "com.example.android.firestore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "7471614068-75s37sfo933pessbnep0lr1eo0jec8l8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD74WReEjFZDmYBCElpqN4rqHsnKTYFEI4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "7471614068-75s37sfo933pessbnep0lr1eo0jec8l8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

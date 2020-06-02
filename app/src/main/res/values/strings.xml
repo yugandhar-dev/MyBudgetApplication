@@ -9,4 +9,6 @@
     <string name="confirm_password_hint">Confirm Password</string>
     <string name="sign_up_text">Sign up</string>
     <string name="back_to_login_text">Back to Login</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.firestore.models.SourceData
+import com.example.android.firestore.models.SpacingTransactionList
 import com.example.android.firestore.models.TransactionRecyclerAdapter
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -34,6 +35,8 @@ class HomeFragment : Fragment() {
     private fun initRecylerView() {
         recyler_view.apply {
             layoutManager = LinearLayoutManager(activity)
+            val topSpacingDecor = SpacingTransactionList(30)
+            addItemDecoration(topSpacingDecor)
             transactionAdapter = TransactionRecyclerAdapter()
             adapter = transactionAdapter
         }

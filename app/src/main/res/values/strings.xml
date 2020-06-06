@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">firestore</string>
+    <string name="app_name">Secure</string>
     <string name="new_user_sign_up">New User? Sign up</string>
     <string name="login">Login</string>
     <string name="password_hint">Password</string>
@@ -11,4 +11,6 @@
     <string name="back_to_login_text">Back to Login</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="submit">Submit</string>
+    <string name="dollars">%d AUD</string>
 </resources>

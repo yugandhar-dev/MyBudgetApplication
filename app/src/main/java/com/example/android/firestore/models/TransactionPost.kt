@@ -1,14 +1,14 @@
 package com.example.android.firestore.models
 
-import java.util.*
-
 data class TransactionPost(
-    var title: String,
+    var description: String,
     var date: String,
-    var amount: String,
-    var image: String
+    var amount: String
 ) {
+
+    constructor() : this("", "", "")
+
     override fun toString(): String {
-        return "TransactionPost(title=$title, image=$image, date=$date, amount=$amount)"
+        return "TransactionPost(description=$description, date=$date, amount=$amount)"
     }
 }

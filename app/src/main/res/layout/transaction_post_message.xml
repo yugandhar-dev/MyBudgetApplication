@@ -1,67 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardElevation="10dp"
     app:cardCornerRadius="2dp"
-    app:cardPreventCornerOverlap="false" >
+    app:cardElevation="10dp"
+    app:cardPreventCornerOverlap="false">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageView
-            android:id="@+id/transaction_image"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="31dp"
-            android:layout_marginBottom="31dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:minHeight="70dp">
 
         <TextView
             android:id="@+id/transaction_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="45dp"
-            android:layout_marginTop="31dp"
+            android:layout_marginTop="16dp"
             android:text="TextView"
-            android:textSize="24sp"
-            app:layout_constraintStart_toEndOf="@+id/transaction_image"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/transaction_date"
+            app:layout_constraintEnd_toStartOf="@+id/transaction_amount"
+            app:layout_constraintHorizontal_bias="0.107"
+            app:layout_constraintStart_toStartOf="@+id/transaction_date"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/transaction_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="45dp"
-            android:layout_marginTop="11dp"
-            android:layout_marginEnd="234dp"
-            android:layout_marginBottom="19dp"
             android:text="TextView"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/transaction_image"
+            app:layout_constraintEnd_toEndOf="@+id/transaction_title"
+            app:layout_constraintStart_toStartOf="@+id/transaction_title"
             app:layout_constraintTop_toBottomOf="@+id/transaction_title" />
 
         <TextView
             android:id="@+id/transaction_amount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="45dp"
+            android:layout_gravity="right"
             android:layout_marginEnd="24dp"
-            android:layout_marginBottom="45dp"
             android:text="TextView"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.cardview.widget.CardView>

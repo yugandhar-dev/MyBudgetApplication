@@ -1,64 +1,38 @@
 package com.example.android.firestore.models
 
+import android.provider.ContactsContract
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.view.menu.ActionMenuItemView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.example.android.firestore.R
-import kotlinx.android.synthetic.main.transaction_post_message.view.*
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter
+import com.firebase.ui.firestore.FirestoreRecyclerOptions
 
-class TransactionRecyclerAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-
-    private val TAG: String = "AppDebug"
-
-    private var items: List<TransactionPost> = ArrayList()
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return TransactionViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.transaction_post_message, parent, false)
-        )
+class TransactionRecyclerAdapter(options: FirestoreRecyclerOptions<TransactionPost>) : FirestoreRecyclerAdapter<TransactionPost, TransactionRecyclerAdapter.TransactionHolder>(options) {
+    override fun onBindViewHolder(holder: TransactionHolder, position: Int, model: TransactionPost) {
+        holder.textViewDate?.setText(model.date)
+        holder.textViewDescription?.setText(model.description)
+        holder.textViewAmount?.setText(model.amount)
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        when(holder) {
-            is TransactionViewHolder -> {
-                holder.bind(items.get(position))
-            }
-        }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TransactionHolder {
+        val v = LayoutInflater.from(parent.context).inflate(
+            R.layout.transaction_post_message,
+            parent, false)
+        return TransactionHolder(v)
     }
 
-    override fun getItemCount(): Int {
-        return items.size
-    }
+    inner class TransactionHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var textViewDate: TextView?
+        var textViewDescription: TextView?
+        var textViewAmount: TextView?
 
-    fun submitList(transactionList: List<TransactionPost>) {
-        items = transactionList
-    }
-
-    class TransactionViewHolder constructor(
-        itemView: View
-    ): RecyclerView.ViewHolder(itemView) {
-        val transactionImage = itemView.transaction_image
-        val transactionTitle = itemView.transaction_title
-        val transactionDate = itemView.transaction_date
-        val transactionAmount = itemView.transaction_amount
-
-        fun bind(transactionPost: TransactionPost) {
-            transactionTitle.setText(transactionPost.title)
-            transactionDate.setText(transactionPost.date)
-            transactionAmount.setText(transactionPost.amount)
-
-            val requestOptions = RequestOptions()
-                .placeholder(R.drawable.ic_launcher_background)
-                .error(R.drawable.ic_launcher_background)
-
-            Glide.with(itemView.context)
-                .applyDefaultRequestOptions(requestOptions)
-                .load(transactionPost.image)
-                .into(transactionImage)
+        init {
+            textViewDate = itemView.findViewById(R.id.transaction_date)
+            textViewDescription = itemView.findViewById(R.id.transaction_title)
+            textViewAmount = itemView.findViewById(R.id.transaction_amount)
         }
     }
 }
